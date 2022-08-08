@@ -156,6 +156,21 @@ const LandingPage = () => {
                                 </button>
                             </div>
                         </div>
+                        <div className="row py-5">
+                            <div className="col-lg-7"></div>
+                            <div className="col-lg-5 hero-text">
+                                <h1 className="text-white" style={{ fontWeight: 'bold' }}>
+                                    Lorem ipsum
+                                </h1>
+                                <h2 className="text-white" style={{ fontWeight: 'bold' }}>
+                                    Lorem ipsum dolor sit amet
+                                </h2>
+                                <p className="text-white">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias autem odio voluptatibus? Deserunt, culpa, maiores reprehenderit aperiam incidunt aut quisquam magni
+                                    dolorem est iusto alias quos iure? Quisquam, voluptatibus facilis?
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

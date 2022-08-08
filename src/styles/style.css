@@ -42,14 +42,28 @@
 /* hero styles */
 
 .hero {
-    background-image: url('/public/assets/Desktop-01.jpg');
+    background-image: url('/public/assets/Desktop-01.png');
     background-color: #191970;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 760px;
+    height: 768px;
 }
 
+.hero-text {
+    margin-top: 10%;
+}
+.hero-text h1 {
+    font-size: 4.5rem;
+    word-spacing: 5px;
+    letter-spacing: 2.5px;
+}
+.hero-text h2 {
+    letter-spacing: 2.5px;
+}
+.hero-text p {
+    font-weight: lighter;
+}
 /* price card styles */
 
 .btn-no-backgroud {
@@ -99,14 +113,30 @@
 /* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 595px) {
     .hero {
-        background-image: url('/public/Mobile-01.jpg');
+        background-image: url('/public/assets/Mobile-01.png');
         background-color: #191970;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        height: 760px;
+        height: 768px;
     }
-
+    .hero-text {
+        margin-top: 1px;
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 1.9rem;
+        word-spacing: 5px;
+        letter-spacing: 2.5px;
+    }
+    .hero-text h2 {
+        font-size: 1rem;
+        letter-spacing: 2.5px;
+    }
+    .hero-text p {
+        font-size: 0.7rem;
+        font-weight: lighter;
+    }
     .round {
         background-color: black;
         width: 40px;
