@@ -3,15 +3,31 @@ import { MdOutlineAlternateEmail } from 'react-icons/md';
 import { AiOutlineLock } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import axios from 'axios';
+import { url } from '../api';
 
 interface LoginType {}
 
 const Login = () => {
     const navigate = useNavigate();
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log('Clicked');
+        await axios
+            .post(`${url}login`, {
+                username: username,
+                password: password
+            })
+            .then((res) => {
+                console.log(res.headers);
+                navigate('/profile');
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     return (
@@ -25,15 +41,15 @@ const Login = () => {
                         <div className="text-center">
                             <h2 className="text-md mb-1">Hello Again!</h2>
                             <div className="gray-text mb-5">test test test test test</div>
-                            <form onSubmit={handleSubmit}>
+                            <form onSubmit={handleLogin}>
                                 <div className="mb-4 input-group ">
-                                    <input type="email" placeholder="Email" className="form-control" />
+                                    <input type="text" placeholder="Username" required onChange={(e) => setUsername(e.target.value)} className="form-control" />
                                     <span className="input-group-text bg-white">
                                         <MdOutlineAlternateEmail />
                                     </span>
                                 </div>
                                 <div className="mb-4 input-group ">
-                                    <input type="password" placeholder="Password" className="form-control" />
+                                    <input type="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} className="form-control" />
                                     <span className="input-group-text bg-white">
                                         <AiOutlineLock />
                                     </span>
@@ -50,7 +66,7 @@ const Login = () => {
                                     </a>
                                 </div>
                                 <div className="mb-3">
-                                    <button type="submit" className="btn-color rounded border-0 p-2 w-100 hover" onClick={() => navigate('/profile')}>
+                                    <button type="submit" className="btn-color rounded border-0 p-2 w-100 hover">
                                         Login{' '}
                                     </button>
                                 </div>
